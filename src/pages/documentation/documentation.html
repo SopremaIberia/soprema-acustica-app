@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-navbar color="soprema">
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>{{'documentation_title' | translate}} </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-row>
+            <div class="container-catalogue col-app-50" *ngFor="let item of document;let i = index" (click)="download(item)" [ngClass]="{'grid-margin': i % 2 == 0}">
+                <img src="{{item.field_document_img}}" class="fulls">
+                <div class="container-catalogue-header">
+                    <h4 text-center>{{item.title}}</h4>
+                </div>
+            </div>
+        </ion-row>
+    </ion-list>
+</ion-content>

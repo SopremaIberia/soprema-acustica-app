@@ -1,0 +1,20 @@
+<ion-header>
+
+    <ion-navbar color="soprema">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{'notification_title' | translate}} </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item *ngFor="let notification of notifications" (click)="goDetail(notification)">
+            {{notification.title}}
+            <div item-end class="item-icons noti-icon-col">
+                <img src="assets/imgs/vist.png" *ngIf="!checkReaded(notification.nid)" />
+            </div>
+        </ion-item>
+    </ion-list>
+</ion-content>

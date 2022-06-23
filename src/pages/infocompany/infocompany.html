@@ -1,0 +1,56 @@
+<ion-header>
+
+    <ion-navbar color="soprema">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{'infocompany_title' | translate}} </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div *ngIf="about_text != undefined">
+        <div [innerHTML]="about_text" class="container-content" showWhen="ios"></div>
+        <div class="container-content" showWhen="android">
+            <p>Soprema Iberia constituye como filial en España de la multinacional GRUPO SOPREMA.</p>
+            <p>Soprema Iberia es una empresa que fabrica y comercializa láminas asfálticas, membranas de impermeabilización sintética y liquida, productos para aislamiento acústico y para el
+                aislamiento término, geotextiles y drenaje.</p>
+            <p>Soprema Iberia está al servicio de los sectores de edificación, rehabilitación, distribución y obra civil, ofreciendio productos y soluciones de calidad para las diversas exigencias del
+                mercado.</p>
+        </div>
+        <div class="section-header">
+            <h4 text-center>Cifras del Grupo Soprema</h4>
+        </div>
+        <img src="assets/imgs/cifras.png" imageViewer>
+
+        <div class="section-header">
+            <h4 text-center>Fabricas Soprema Iberia</h4>
+        </div>
+        <div class="img-center">
+            <ion-slides pager="true">
+                <ion-slide *ngFor="let image of images">
+                    <img [src]="image" imageViewer>
+                </ion-slide>
+            </ion-slides>
+        </div>
+        <ion-grid>
+            <ion-row>
+                <ion-col text-center>
+                    <ion-icon name="phone-portrait" color="primary" (click)="open('https://www.soprema.es')"></ion-icon>
+                </ion-col>
+                <ion-col text-center>
+                    <ion-icon name="logo-twitter" color="primary" (click)="open('https://twitter.com/SopremaIberia')"></ion-icon>
+                </ion-col>
+                <ion-col text-center>
+                    <ion-icon name="logo-instagram" color="primary" (click)="open('https://www.instagram.com/sopremaiberia/')"></ion-icon>
+                </ion-col>
+                <ion-col text-center>
+                    <ion-icon name="logo-youtube" color="primary" (click)="open('https://www.youtube.com/channel/UC3z_r1DlQRauLVNHNZ24Cig ')"></ion-icon>
+                </ion-col>
+                <ion-col text-center>
+                    <ion-icon name="logo-linkedin" color="primary" (click)="open('https://www.linkedin.com/company/sopremaiberia/ ')"></ion-icon>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>

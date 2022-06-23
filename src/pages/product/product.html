@@ -1,0 +1,100 @@
+<ion-header>
+
+    <ion-navbar color="soprema">
+        <ion-title>{{product.title}} </ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <div class="img-center">
+        <ion-slides pager="true">
+            <ion-slide *ngFor="let image of product.field_pr_image">
+                <img [src]="image.img_path" imageViewer>
+            </ion-slide>
+        </ion-slides>
+    </div>
+    <div class="section-header">
+        <h4 class="title_text">{{product.title}}</h4>
+    </div>
+    <div class="container-content" [innerHTML]="product.body"></div>
+    <div class="section-header">
+        <p>
+            <b>{{'advantages' | translate}}</b>
+        </p>
+    </div>
+    <div class="container-content">
+        <ul>
+            <li text-wrap *ngFor="let item of product.field_pr_advantages">
+                {{item.value}}
+            </li>
+        </ul>
+    </div>
+    <div class="section-header">
+        <p>
+            <b>{{'applications' | translate}}</b>
+        </p>
+    </div>
+    <div class="container-content">
+        <ul>
+            <li *ngFor="let item of product.field_pr_application">
+                {{item.value}}
+            </li>
+        </ul>
+    </div>
+    <div class="section-header">
+        <p><b>{{'conditioning' | translate}}</b></p>
+    </div>
+    <ion-list>
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <div>
+                        <strong>Modelo</strong>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div>
+                        <strong>Rollo</strong>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div>
+                        <strong>Palet</strong>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <div *ngFor="let item of product.field_pr_conditioning" class="list-elements">
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <div>
+                            {{item.field_cp_model}}
+                        </div>
+                    </ion-col>
+                    <ion-col>
+                        <div>
+                            {{item.field_cp_roll}}
+                        </div>
+                    </ion-col>
+                    <ion-col>
+                        <div>
+                            {{item.field_cp_pallet}} m<sup>2</sup>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+    </ion-list>
+
+    <div class="cont_footer">
+        <button ion-button class="button-app-footer" block (click)="shareDocument(product)">{{'share' | translate}}
+            <ion-icon name="share" margin-left></ion-icon>
+        </button>
+        <button ion-button class="button-app-footer" block (click)="download(product)">{{'data_sheet' | translate}}
+            <ion-icon name="download" margin-left></ion-icon>
+        </button>
+    </div>
+</ion-content>

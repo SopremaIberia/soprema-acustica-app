@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-navbar color="soprema">
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>{{title}} </ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+    <ion-list>
+        <ion-row>
+            <div class="container-catalogue col-app-50" *ngFor="let item of contentcategory;let i = index" (click)="pushToInfoCategory(item)" [ngClass]="{'grid-margin': i % 2 == 0}">
+                <img class="fulls" src="{{item.field_ast_image}}">
+                <div class="container-catalogue-header">
+                    <h4 text-center>{{item.name}}</h4>
+                </div>
+            </div>
+        </ion-row>
+    </ion-list>
+</ion-content>

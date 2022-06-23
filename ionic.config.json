@@ -1,0 +1,7 @@
+{
+  "name": "Soprema",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

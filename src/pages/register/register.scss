@@ -1,0 +1,23 @@
+page-register {
+    .buttonRegister {
+        margin-top: 0.5em;
+        height: 4em;
+        border-radius: 5px;
+        background-color: #007CC1;
+    }
+    .select_province {
+        margin-top: 0.5em;
+        border: 2px solid #C7C9CA;
+        border-radius: 5px;
+        //width: 110%;
+        width: 550px;
+    }
+    ion-select {
+        max-width: 100%;
+    }
+    .item-select {
+        width: 100%;
+        width: auto;
+        margin-left: -1em;
+    }
+}

@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-navbar color="soprema">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{title}} </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <div>
+        <ion-list>
+            <ion-item-group *ngFor="let cat of categories">
+                <ion-item-divider color="grey">
+                    <h4 class="subtitle">{{cat.name}}</h4>
+                </ion-item-divider>
+                <div lines *ngFor="let item of content_info">
+                    <div *ngFor="let items of item.field_as_decision_tree">
+                        <ion-item lines *ngIf="items.target_id == cat.tid" (click)="toInfoPage(item,cat)">
+                            <div class="text" text-wrap>
+                                <b>{{item.field_as_code}}</b> {{item.title}}
+                            </div>
+                        </ion-item>
+                    </div>
+                </div>
+            </ion-item-group>
+        </ion-list>
+    </div>
+</ion-content>

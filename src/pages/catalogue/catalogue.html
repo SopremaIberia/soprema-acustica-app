@@ -1,0 +1,25 @@
+<ion-header>
+
+    <ion-navbar color="soprema">
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>{{'acustic_solutions' | translate}} </ion-title>
+        <ion-buttons end><button ion-button clear (click)="toConfiguration()" showWhen="android">
+            <ion-icon name="more" ></ion-icon>
+        </button>
+    </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+    <ion-list>
+        <div class="container-catalogue" *ngFor="let item of content.isolation_types" (click)="toCatalogueSelection(item)">
+            <img class="img-catalogue" src="{{item.field_ast_image}}" />
+            <div class="container-catalogue-header">
+                <h4 text-center>{{item.name}}</h4>
+            </div>
+        </div>
+    </ion-list>
+</ion-content>

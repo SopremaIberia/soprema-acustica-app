@@ -1,0 +1,26 @@
+<ion-header>
+
+    <ion-navbar color="soprema">
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>{{'productrange_title' | translate}} </ion-title>
+        <ion-buttons end><button ion-button clear (click)="toConfiguration()">
+        <ion-icon name="md-more"></ion-icon>
+      </button></ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+    <ion-list>
+        <ion-row>
+            <div class="container-catalogue col-app-50" *ngFor="let item of range;let i = index" (click)="pushToInfo(item)" [ngClass]="{'grid-margin': i % 2 == 0}">
+                <img *ngIf="item.field_pr_image.length > 0" class="fulls" src="{{item.field_pr_image[0].img_path}}">
+                <div class="container-catalogue-header">
+                    <h4 text-center>{{item.title}}</h4>
+                </div>
+            </div>
+        </ion-row>
+    </ion-list>
+</ion-content>

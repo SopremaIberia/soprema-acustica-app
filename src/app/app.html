@@ -1,0 +1,43 @@
+<ion-menu [content]="content">
+    <ion-header>
+
+        <!--
+        <ion-toolbar color="soprema" class="menu_header" showWhen="ios">
+            <img class="logo" src="assets/imgs/soundproofing_logo.png">  
+                
+        <img style="margin-bottom: -5px;" src="assets/imgs/logo_menu.png">
+        </ion-toolbar> -->
+
+        <ion-toolbar color="soprema" class="menu_header" style="padding:0px;">
+            <img style="margin-bottom: -5px;" src="assets/imgs/logo_menu.png">
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+        <ion-list no-lines>
+            <div class="content_menu" menuClose ion-item *ngFor="let p of pages">
+                <div *ngIf="p.id != 7">
+                    <div (click)="openPage(p)">
+                        <img class="icon" src="{{p.icon}}">
+                        <p class="text_menu">{{p.title}}</p>
+                    </div>
+                    <ion-item class="submenu" *ngFor="let item of p.submenu" (click)="toSubmenu(item)">
+                        <p>{{item.name}}</p>
+                    </ion-item>
+                </div>
+                <div class="content_menu" *ngIf="p.id == 7" (click)="openPage(p)">
+                    <img class="icon" src="{{p.icon}}">
+                    <p class="text_menu_color">{{p.title}}</p>
+                </div>
+            </div>
+        </ion-list>
+
+        <div class="version">
+            <p>v 2.1.0</p>
+        </div>
+    </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

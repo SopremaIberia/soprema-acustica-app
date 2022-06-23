@@ -1,0 +1,48 @@
+<ion-header>
+    <ion-navbar color="soprema">
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>{{'title_configuration'| translate}}
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <div margin-top>
+        <h5>{{'language_configuration' | translate}}</h5>
+        <div *ngFor="let item of languages" (click)="changeIconLanguage(item)">
+            <ion-icon name="{{item.getIcon()}}"></ion-icon>
+            <div class="text">
+                <h6>{{item.language}}</h6>
+            </div>
+        </div>
+    </div>
+        <!--
+    <div margin-top>
+        <h5>{{'personal_data' | translate}}</h5>
+        <ion-input type="text" block [(ngModel)]="textname" placeholder="{{'placeholder_name_surname' | translate}}"></ion-input>
+        <ion-input type="text" block [(ngModel)]="textbusiness" placeholder="{{'placeholder_company' | translate}}"></ion-input>
+        <ion-input type="tel" block [(ngModel)]="telephone" placeholder="{{'placeholder_phone' | translate}}"></ion-input>
+    </div>
+
+    <ion-item class="selected">
+        <ion-select [(ngModel)]="province" placeholder="{{'placeholder_province'|translate}}">
+            <ion-option *ngFor="let key of keys" value="{{key}}">{{key}}</ion-option>
+        </ion-select>
+    </ion-item> 
+    <button ion-button block class="buttons" color="soprema" (click)="inputData()">{{'save' | translate}}</button>
+    <div margin-top>
+        <h5>{{'modify_pass' | translate}}</h5>
+        <ion-input type="password" [(ngModel)]="oldpass" placeholder="{{'placeholder_oldpass' | translate}}"></ion-input>
+        <ion-input type="password" [(ngModel)]="newpass" placeholder="{{'placeholder_newpass' | translate}}"></ion-input>
+        <ion-input type="password" [(ngModel)]="confirmnewpass" placeholder="{{'placeholder_repeatnewpass' | translate}}"></ion-input>
+        <p class="link">{{'forgot.pass' | translate}}</p>
+        <button ion-button block class="buttons" color="soprema" (click)="inputData()">{{'change' | translate}}</button>
+    </div>
+    <div margin-top>
+        <h5>{{'legal_advise' | translate}}</h5>
+        <p class="link">{{'text_legaladvise' | translate}}</p>
+    </div>-->
+</ion-content>

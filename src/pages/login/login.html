@@ -1,0 +1,23 @@
+<ion-header>
+</ion-header>
+<ion-content padding>
+    <div class="img-center" margin-top style="margin-top:70px;">
+        <img src="assets/imgs/logo_login.png" />
+    </div>
+    <ion-list margin-top >
+        <ion-item class="bordered" margin-top  style="margin-top:30px;">
+            <ion-input type="text" [(ngModel)]="user" placeholder="{{'email' | translate }}"></ion-input>
+        </ion-item>
+        <ion-item class="bordered" margin-top>
+            <ion-input [type]="passwordType" [(ngModel)]="password" placeholder="{{'placeholder_pass' | translate}}">
+            </ion-input>
+            <ion-icon item-end [name]="passwordIcon" class="avoid-cursor" (click)='hideShowPassword($event)'></ion-icon>
+        </ion-item>
+
+        <button margin-top ion-button block class="button-app-large"
+            (click)="processLogin()">{{'placeholder_login' | translate }}</button>
+        <p (click)="toResetPass()" class="link" text-end>{{'resetpass'|translate}}</p>
+        <button ion-button block class="button-app-large button-app-large-inverted"
+            (click)="toRegister()">{{'placeholder_register' | translate }}</button>
+    </ion-list>
+</ion-content>

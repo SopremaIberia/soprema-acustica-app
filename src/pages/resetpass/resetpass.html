@@ -1,0 +1,13 @@
+<ion-header>
+    <ion-navbar color="soprema">
+        <ion-title>{{'resetpasstitle' | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div class="container-content">
+        {{'textresetpass' | translate}}
+    </div>
+    <ion-input type="text" class="bordered" [(ngModel)]="email" placeholder="{{'email' | translate}}"></ion-input>
+    <button class="button-app-large" margin-top ion-button block (click)="resetPass()"> {{'resetpasstitle' | translate}} </button>
+</ion-content>

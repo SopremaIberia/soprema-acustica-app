@@ -1,0 +1,27 @@
+page-catalogue-selection {
+    col {
+        min-width: 140px;
+        max-width: 220px;
+        min-height: 140px;
+        max-height: 220px;
+    }
+    .use-text-catalogue {
+        position: relative;
+        margin-top: -0.2em;
+        background-color: rgba(0, 124, 193, .6);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .text-catalogue {
+            margin-left: 0.5em;
+            width: 100%;
+            font-size: 1.2em;
+            text-align: center;
+            color: white;
+        }
+    }
+    .image-medium-size {
+        height: 170px;
+        width: 100%;
+    }
+}

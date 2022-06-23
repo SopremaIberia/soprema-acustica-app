@@ -1,0 +1,146 @@
+<ion-header>
+    <ion-navbar color="soprema">
+        <ion-title>{{content.field_as_code}} {{content.title}} </ion-title>
+    </ion-navbar>
+    <ion-toolbar color="sopremalight">
+        <ion-segment [(ngModel)]="details" color="light">
+            <ion-segment-button value="general">
+                {{'generalinfo' | translate}}
+            </ion-segment-button>
+            <ion-segment-button value="tecnic">
+                {{'tecnicinfo' | translate}}
+            </ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [ngSwitch]="details" has-bouncing="false">
+    <ion-list *ngSwitchCase="'general'" ngSelected="selected">
+        <div class="section-header">
+            <h4 class="title_text">{{content.field_as_code}} {{content.title}}</h4>
+        </div>
+        <div class="container-content" [innerHTML]="content.body">
+        </div>
+
+        <div>
+            <ion-grid no-padding>
+                <ion-row *ngIf="content.field_as_impact_noise_isolation">
+                    <ion-col class="section-header">
+                        <div style="width: 100%; text-align: center;">
+                            <span *ngIf="parentId.name != 'Suelo' && parentId.parent_id != 7"><strong>R<sub>A</sub> =</strong></span>
+                            <span *ngIf="parentId.name == 'Suelo' || parentId.parent_id == 7"><strong>ΔLw =</strong></span>
+
+                            {{content.field_as_impact_noise_isolation}} {{content.field_as_impact_noise_suffix}}
+                        </div>
+                    </ion-col>
+                    <ion-col class="section-header" *ngIf="content.field_as_thickness" style="margin-left: 5px;">
+                        <div style="width: 100%; text-align: center;">
+                            <strong>E =</strong> {{content.field_as_thickness}} mm
+                        </div>
+                    </ion-col>
+                </ion-row>
+                <ion-row *ngIf="content.field_as_air_noise_isolation">
+                    <ion-col class="section-header">
+                        <div style="width: 100%; text-align: center;">
+                            <strong>R<sub>A</sub> =</strong>
+                            {{content.field_as_air_noise_isolation}} {{content.field_as_air_noise_suffix}}
+                        </div>
+                    </ion-col>
+                    <ion-col class="section-header" *ngIf="content.field_as_thickness" style="margin-left: 5px;">
+                        <div style="width: 100%; text-align: center;">
+                            <strong>E =</strong> {{content.field_as_thickness}} mm
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+
+
+        <div class="img-center">
+            <ion-slides pager="true">
+                <ion-slide *ngFor="let image of content.field_as_img_layers">
+                    <img [src]="image.img_path" imageViewer>
+                </ion-slide>
+            </ion-slides>
+        </div>
+        <div class="section-header">
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <b>Capa</b>
+                    </ion-col>
+                    <ion-col>
+                        <b>Tipo</b>
+
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+        <ion-list>
+
+            <div *ngFor="let item of content.field_as_layers" class="list-elements">
+                <ion-grid>
+                    <ion-row>
+                        <ion-col>
+                            <div>
+                                {{item.field_lp_name}}
+                            </div>
+                        </ion-col>
+                        <ion-col>
+                            <div>
+                                {{item.field_lp_product_solution}}
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </div>
+        </ion-list>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'tecnic'">
+        <div>
+            <div class="section-header">
+                <h5>{{'CADdetails' | translate}}</h5>
+            </div>
+            <div class="img-center">
+                <ion-slides pager="true">
+                    <ion-slide *ngFor="let image of content.field_as_cad_details">
+                        <img [src]="image.img_path" imageViewer>
+                    </ion-slide>
+                </ion-slides>
+            </div>
+            <div class="section-header" *ngIf="parentId != undefined">
+                <h5 *ngIf="parentId.parent_id == 7; else makeElse">{{'betterisolation' | translate}}</h5>
+                <ng-template #makeElse>
+                    <h5 *ngIf="parentId.name != 'Suelo'">{{'betterisolationair' | translate}}</h5>
+                    <h5 *ngIf="parentId.name == 'Suelo'">{{'betterisolation' | translate}}</h5>
+                </ng-template>
+            </div>
+            <div class="img-center">
+                <ion-slides pager="true">
+                    <ion-slide *ngFor="let image of content.field_as_better_isolation">
+                        <img [src]="image.img_path" imageViewer>
+                    </ion-slide>
+                </ion-slides>
+            </div>
+        </div>
+        <div class="section-header">
+            <h6>{{'advantages' | translate}}</h6>
+        </div>
+        <div class="container-content" [innerHTML]="content.field_as_advantages">
+        </div>
+    </ion-list>
+
+    <div class="cont_footer">
+        <button class="button-app-footer" (click)="shareDocument(content)" margin-left margin-bottom>
+            {{'share' | translate}}
+            <ion-icon name="share" margin-left>
+            </ion-icon>
+        </button>
+        <button class="button-app-footer" (click)="download(content)" margin-right margin-bottom>
+            {{'data_sheet' | translate}}
+            <ion-icon name="download" margin-left>
+            </ion-icon>
+        </button>
+    </div>
+</ion-content>

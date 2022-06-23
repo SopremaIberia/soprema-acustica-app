@@ -1,0 +1,33 @@
+<ion-header>
+
+    <ion-navbar color="soprema">
+        <ion-title>{{'detailnotification_title' | translate}} </ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+    <ion-slides pager="true">
+        <ion-slide *ngFor="let image of notification.field_notification_images">
+            <img [src]="image.img_path" imageViewer>
+        </ion-slide>
+    </ion-slides>
+    <div class="section-header">
+        <h4 class="title_text">{{notification.title}}</h4>
+    </div>
+    <div class="container-content" [innerHTML]="notification.body">
+    </div>
+
+    <div margin>
+        <button *ngFor="let item of notification.field_notification_links" ion-button block class="button-app-footer" (click)="link(item)">
+        {{item.title}} <ion-icon name="link" margin-left></ion-icon>
+      </button>
+    </div>
+
+    <div margin>
+        <button *ngFor="let item of notification.field_notification_documents" ion-button block class="button-app-footer" (click)="link(item)">
+       {{item.file_name}} <ion-icon name="download" margin-left></ion-icon>
+      </button>
+    </div>
+
+</ion-content>

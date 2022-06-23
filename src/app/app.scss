@@ -1,0 +1,214 @@
+// http://ionicframework.com/docs/theming/
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+.content_menu {
+    max-height: 100%;
+    .icon {
+        width: 32px;
+    }
+    .text_menu {
+        margin-top: -1.8em;
+        margin-left: 3em;
+        margin-bottom: 0.5em;
+        font-size: 1em;
+        color: #000;
+        font-size: medium;
+          height: 32px;
+    }
+    .text_menu_color {
+        margin-top: -1.8em;
+        margin-left: 3em;
+        margin-bottom: 0.5em;
+        font-size: 1em;
+        color: #007CC1;
+        font-size: medium;
+        height: 32px;
+    }
+}
+
+.menu_header {
+    //height: 180px;
+}
+
+.submenu {
+    margin-left: 3em;
+    font-size: 1em;
+    color: #000;
+    font-size: medium;
+}
+
+.section-header {
+    padding: 10px;
+    height: 50px;
+    background-color: rgba(243, 243, 243, 0.849);
+    display: flex;
+    align-items: center;
+}
+
+.title_text {
+    font-size: 1.3em;
+    font-size: medium;
+}
+
+.version {
+    text-align: center;
+}
+
+.logo {
+    padding: 2em 2em 2em 2em;
+    border-radius: 5px;
+}
+
+ion-input {
+    font-size: medium;
+}
+
+.item-input::after {
+    border-bottom-color: transparent !important;
+}
+
+.bordered {
+    border: 2px solid #C7C9CA;
+    border-radius: 5px;
+}
+
+.text-input {
+    text-align: left;
+    line-height: 30px;
+    font-size: medium;
+}
+
+.button-app-large {
+    height: 4em;
+    margin-top: 1.1em;
+    border-radius: 5px;
+    background-color: #007CC1;
+    font-size: medium;
+}
+
+.button-app-footer {
+    height: 44px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: #007CC1;
+    font-size: small;
+}
+
+.button-app-large-inverted {
+    background-color: rgb(255, 255, 255);
+    color: #007CC1;
+    border: 1px;
+    border-color: #007CC1;
+    border-style: solid;
+    &.button-md {
+        box-shadow: none;
+    }
+}
+
+.link {
+    color: #007CC1;
+    font-size: medium;
+    text-align: right;
+}
+
+.img-center img {
+    display: block;
+    margin: auto;
+}
+
+.subtitle {
+    font-size: 1.5em;
+    color: black;
+    border-bottom: gray 2px;
+}
+
+.container-content {
+    white-space: normal;
+    padding: 10px;
+    line-height: 1.5em;
+    font-size: 1.1em;
+    text-align: justify;
+
+    p {
+        margin: 0px;
+    }
+
+    ul {
+        padding: 0px;
+        margin-left: 15px;
+    }
+}
+
+.item-content {
+    line-height: 1.5em;
+    font-size: 1.1em;
+    text-align: justify;
+}
+
+//Footer elements
+.cont_footer {
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(255, 255, 255, .8);
+    z-index: 100;
+}
+
+//Section elements
+.container-catalogue {
+    display: flex;
+    flex-wrap: wrap;
+    .container-catalogue-header {
+        width: 100%;
+        height: 60px;
+        color: white;
+        display: flex;
+        justify-self: flex-end;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(1, 120, 184, 0.603);
+        padding: 5px;
+    }
+    .img-catalogue {
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+        display: flex;
+    }
+}
+
+.col-app-50 {
+    width: calc(50% - 2px);
+}
+
+//Basic elements
+h4 {
+    font-size: 14px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.grid-margin {
+    margin-right: 4px;
+}
+
+.fulls {
+    width: 100%;
+    height: calc(100% - 60px);
+}
+
+.list-elements:nth-of-type(even) {
+    background: #f0f0f0;
+}

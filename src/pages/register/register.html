@@ -1,0 +1,50 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{'register' | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div class="logo-title img-center">
+        <img src="assets/imgs/logo_login.png" />
+    </div>
+    <ion-list margin-top>
+        <ion-item class="bordered" margin-top>
+            <ion-input type="text" [(ngModel)]="email" placeholder="{{'email' | translate}}"></ion-input>
+        </ion-item>
+        <ion-item class="bordered" margin-top>
+            <ion-input type="password" [(ngModel)]="password" placeholder="{{'placeholder_pass' | translate}}">
+            </ion-input>
+        </ion-item>
+        <ion-item class="bordered" margin-top>
+            <ion-input type="password" [(ngModel)]="repeatpass"
+                placeholder="{{'placeholder_repeatnewpass' | translate}}">
+            </ion-input>
+        </ion-item>
+        <ion-item class="bordered" margin-top>
+            <ion-input type="text" [(ngModel)]="name" placeholder="{{'placeholder_name_surname' | translate}}">
+            </ion-input>
+        </ion-item>
+        <ion-item class="bordered" margin-top>
+            <ion-input type="text" [(ngModel)]="company" placeholder="{{'placeholder_company' | translate}}">
+            </ion-input>
+        </ion-item>
+        <ion-item class="bordered" margin-top>
+            <ion-input type="tel" [(ngModel)]="tlf" placeholder="{{'placeholder_phone' | translate}}"></ion-input>
+        </ion-item>
+        <ion-item (click)="openLegal()" margin-top>
+            <ion-label text-wrap>{{'legal.accept'|translate}}</ion-label>
+            <ion-checkbox slot="end" [(ngModel)]="legal" value="legal"></ion-checkbox>
+        </ion-item>
+        <!--<ion-item class="item-select">
+            <ion-select outline block [(ngModel)]="province" placeholder="{{'placeholder_province'|translate}}">
+                <ion-option *ngFor="let key of keys" value="{{key}}">{{key}}</ion-option>
+            </ion-select>
+        </ion-item> -->
+        <button ion-button block class="button-app-large" (click)="registerUser()">{{'register' | translate}}</button>
+    </ion-list>
+
+</ion-content>

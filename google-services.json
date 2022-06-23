@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "560815921787",
+    "firebase_url": "https://soprema-89b18.firebaseio.com",
+    "project_id": "soprema-89b18",
+    "storage_bucket": "soprema-89b18.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:560815921787:android:0e27d92bffc379b2",
+        "android_client_info": {
+          "package_name": "com.soprema.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "560815921787-f251qsvn76658tm3ob7taal6l35k57aj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHjlZjUyaND-3A96rAwyTw0Y0RQxUPAa8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

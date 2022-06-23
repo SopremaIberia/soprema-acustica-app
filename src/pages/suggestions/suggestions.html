@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar color="soprema">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'suggestion' | translate}} </ion-title>
+    <ion-buttons end showWhen="android">
+      <button ion-button clear (click)="toConfiguration()">
+        <ion-icon name="md-more"></ion-icon>
+      </button></ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <div class="container-content">{{'text_suggestion' | translate}}</div>
+  <ion-item class="bordered" margin-bottom>
+    <ion-input type="text" [(ngModel)]="email" placeholder="{{'email' | translate }}"></ion-input>
+  </ion-item>
+  <ion-textarea type="text" class="input_textarea" [(ngModel)]="text" placeholder="{{'placeholder_suggestion'| translate}}"></ion-textarea>
+  <button ion-button class="button-app-large" block (click)="sendSuggestion()">{{'send' | translate}}</button>
+  <ion-item margin-top>
+    <ion-label style="font-size:15px; !important" text-wrap>Acepto las condiciones legales.</ion-label>
+    <ion-checkbox slot="end" [(ngModel)]="legal" value="legal"></ion-checkbox>
+  </ion-item>
+  <ion-label style="font-size:15px;" (click)="openLegal()" text-wrap>Quiero leer las condiciones legales.</ion-label>
+</ion-content>
